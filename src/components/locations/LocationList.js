@@ -6,12 +6,13 @@ export default class Location extends Component {
         <React.Fragment>
         <h1>Our Locations</h1>
         <section className="locationWrapper">
-        <h4>Nashville North Location</h4>
-        <h5>500 Puppy Way</h5>
-        <h4>Nashville West Location</h4>
-        <h5>600 Booger lane</h5>
-        <h4>Nashville East Location</h4>
-        <h5>711 Hipster Way</h5>
+        {
+        this.props.locations.map(location =>
+        <div key={location.id}>
+            {location.name}
+        </div>
+            )
+        }
         </section>
         </React.Fragment>
 
