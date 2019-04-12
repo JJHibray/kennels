@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Animal extends Component {
     render() {
         return (
-            <React.Fragment>
+            <section className="content">
             <h1>Animals</h1>
             {
             this.props.animals.map(animal =>
@@ -11,7 +11,7 @@ export default class Animal extends Component {
                 {animal.name}
             </div>    )
             }
-            </React.Fragment>
+            </section>
         );
     }
 

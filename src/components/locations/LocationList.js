@@ -3,9 +3,8 @@ import React, { Component } from 'react'
 export default class Location extends Component {
     render() {
         return (
-        <React.Fragment>
-        <h1>Our Locations</h1>
-        <section className="locationWrapper">
+        <section className="content">
+        <h1>Locations</h1>
         {
         this.props.locations.map(location =>
         <div key={location.id}>
@@ -14,7 +13,6 @@ export default class Location extends Component {
             )
         }
         </section>
-        </React.Fragment>
 
         );
     }
