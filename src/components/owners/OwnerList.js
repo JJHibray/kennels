@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class OwnerList extends Component {
   render() {
     return (
-      <div>
+      <div className="content">
           <h1>Owners</h1>
         {
         this.props.owners.map(owner =>
