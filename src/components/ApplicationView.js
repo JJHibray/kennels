@@ -4,7 +4,10 @@ import AnimalList from './animals/AnimalList'
 import LocationList from './locations/LocationList'
 import EmployeeList from './employees/EmployeeList'
 import OwnerList from "./owners/OwnerList"
-
+import AnimalManager from "../modules/AnimalManager"
+import EmployeeManager from "../modules/EmployeeManager"
+import OwnerManager from "../modules/OwnerManager"
+import LocationManager from "../modules/LocationManager"
 
 
 
@@ -20,21 +23,27 @@ export default class ApplicationViews extends Component {
     }
 
     componentDidMount() {
-        const newState = {}
 
-        fetch("http://localhost:5002/animals")
-            .then(r => r.json())
-            .then(animals => newState.animals = animals)
-            .then(() => fetch("http://localhost:5002/employees")
-            .then(r => r.json()))
-            .then(employees => newState.employees = employees)
-            .then(() => fetch("http://localhost:5002/owners")
-            .then(r => r.json()))
-            .then(owners => newState.owners = owners)
-            .then(() => fetch("http://localhost:5002/locations")
-            .then(r => r.json()))
-            .then(locations => newState.locations = locations)
-            .then(() => this.setState(newState))
+        AnimalManager.getAll().then(allAnimals => {
+            this.setState({
+                animals: allAnimals
+            })
+        })
+        EmployeeManager.getAll().then(allEmployees => {
+            this.setState({
+                employees: allEmployees
+            })
+        })
+        OwnerManager.getAll().then(allOwners => {
+            this.setState({
+                owners: allOwners
+            })
+        })
+        LocationManager.getAll().then(allLocations => {
+            this.setState({
+                locations: allLocations
+            })
+        })
     }
 
     deleteAnimal = id => {
