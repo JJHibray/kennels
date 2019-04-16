@@ -1,3 +1,7 @@
+.header {
+    margin-top: 50px;
+    }
+
 .animals {
     display: flex;
     justify-content: space-evenly;

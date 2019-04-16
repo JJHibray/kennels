@@ -5,6 +5,8 @@ import "./Animal.css"
 export default class AnimalList extends Component {
     render () {
         return (
+         <article className="header">
+            <h1>Animals</h1>
             <section className="content animals">
             {
                 this.props.animals.map(animal =>
@@ -22,6 +24,7 @@ export default class AnimalList extends Component {
                 )
             }
             </section>
+            </article>
         )
     }
 }
