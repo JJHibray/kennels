@@ -30,7 +30,10 @@
     }
   ],
   "animals": [
-    { "id": 1, "name": "Doodles" },
+    {
+      "id": 1,
+      "name": "Doodles"
+    },
     {
       "id": 2,
       "name": "Jack"
@@ -50,6 +53,12 @@
     {
       "id": 6,
       "name": "Checkers"
+    },
+    {
+      "name": "Fluffy",
+      "breed": "Bald Terrier",
+      "employeeId": 3,
+      "id": 7
     }
   ],
   "owners": [
